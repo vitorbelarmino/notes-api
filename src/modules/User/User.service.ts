@@ -6,6 +6,22 @@ class UserService {
     const data = await prisma.user.create({ data: { id: uuid() } });
     return data.id;
   }
+
+  public async getAllNotes(id: string) {
+    const data = await prisma.user.findUnique({
+      where: {
+        id,
+      },
+      select: {
+        notes: {
+          orderBy: {
+            createdAt: "asc",
+          },
+        },
+      },
+    });
+    return data;
+  }
 }
 
 export const userService = new UserService();

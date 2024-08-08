@@ -1,7 +1,12 @@
 import { NextFunction, Request, Response } from "express";
 import CustomError from "../utils/CustomError";
 
-const globalError = (err: CustomError, _req: Request, res: Response, next: NextFunction) => {
+const GlobalError = (
+  err: CustomError,
+  _req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
   try {
     const status = err.status || 500;
     const message = err.message || "Something went wrong";
@@ -11,4 +16,4 @@ const globalError = (err: CustomError, _req: Request, res: Response, next: NextF
   }
 };
 
-export default globalError;
+export default GlobalError;

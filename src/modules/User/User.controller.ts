@@ -6,6 +6,12 @@ class UserController {
     const id = await userService.create();
     res.status(201).json({ userId: id });
   }
+
+  async getAllNotesUser(req: Request, res: Response) {
+    const { id } = req.params;
+    const data = await userService.getAllNotes(id);
+    res.status(200).json(data);
+  }
 }
 
 export const userController = new UserController();

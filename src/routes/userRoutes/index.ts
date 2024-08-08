@@ -1,6 +1,8 @@
 import { Router } from "express";
 import { userController } from "../../modules/User/User.controller";
 
-export const UserRouter = Router();
+export const userRouter = Router();
 
-UserRouter.post("/create", userController.create);
+userRouter
+  .post("/create", userController.create)
+  .get("/:id/notes", userController.getAllNotesUser);
