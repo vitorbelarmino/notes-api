@@ -1,14 +1,13 @@
 import "express-async-errors";
 import express from "express";
+import { router } from "./routes";
 
 export class App {
   public app: express.Application;
   constructor() {
     this.app = express();
     this.config();
-    this.app.get("/", (req, res) => {
-      res.send("Hello world");
-    });
+    this.app.use(router);
     this.app.use(express.json());
   }
 
