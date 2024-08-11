@@ -4,7 +4,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": " nodemon --watch \"./src/**\" ./src/server.ts"
+    "dev": " nodemon --watch \"./src/**\" ./src/server.ts",
+    "db:up": "docker-compose up --build -d",
+    "postinstall": "prisma generate"
   },
   "author": "vitorbelarmino",
   "license": "ISC",
