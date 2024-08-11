@@ -28,4 +28,16 @@ export class Validations {
     }
     return res.status(400).json({ message: error.message });
   }
+
+  public findUserById = async (
+    req: Request,
+    res: Response,
+    next: NextFunction,
+  ) => {
+    const { id } = req.params;
+    if (id) {
+      return next();
+    }
+    return res.status(400).json({ message: "Id do usuário não informado" });
+  };
 }

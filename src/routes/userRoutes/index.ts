@@ -5,4 +5,5 @@ export const userRouter = Router();
 
 userRouter
   .post("/create", userController.create)
+  .get("/:id", userController.findById)
   .get("/:id/notes", userController.getAllNotesUser);
