@@ -47,8 +47,6 @@ $ npx prisma migrate dev
 $ npm run dev
 
 # O App inciará na porta:3333 - acesse http://localhost:3333
-
-# Para acessar a documentação da API, visite o endereço http://localhost:3333/api-docs/
 ```
 
 > Github: https://github.com/vitorbelarmino
